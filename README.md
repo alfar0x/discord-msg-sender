@@ -18,3 +18,8 @@ Script sends random message to discord chats using discord token with mobile pro
 
 
 Error tokens will be saved in `logs/<script_start_time>_error_tokens.log`
+
+## Aleo faucet message sender
+1. `data/messages.private.txt` is not used by this mode
+2. Create `data/aleo.private.txt` file with aleo addresses each from new line. Discord tokens count must be equal to aleo addresses count
+3. Run `py aleo.py`
