@@ -12,7 +12,8 @@ Script sends random message to discord chats using discord token with mobile pro
 - `change_proxy_url` - rotate url for mobile proxy. Just leave empty in the case of regular proxies
 - `sleep_between_accounts_sec` - sleep duration (seconds) between accounts
 - `chat_id` - discord chat id
-- `is_random_proxy` - use `True` to use random proxy from `data/proxies.txt` for each account. If `False` script will use account index to get proxy. First proxy for first account, second proxy for second account etc.
+- `is_random_proxy` - use `True` to use random proxy from `data/proxies.private.txt` for each account. If `False` script will use account index to get proxy. First proxy for first account, second proxy for second account etc.
+- `is_random_msg` - use `True` to use random message from `data/messages.private.txt` for each account. If `False` script will use account index to get message. First message for first account, second message for second account etc.
 - `retry_on_error_count` - times to retry sending message on error
 8. Run script using `python main.py`
 

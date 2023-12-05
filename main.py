@@ -8,6 +8,7 @@ from config import (
     change_proxy_url,
     sleep_between_accounts_sec,
     is_random_proxy,
+    is_random_msg,
     chat_id,
     retry_on_error_count,
 )
@@ -38,11 +39,16 @@ def main():
             f"Amount of proxies must be equals to amount of tokens if you using is_random_proxy = False or use is_random_proxy = True"
         )
 
+    if not is_random_msg and len(messages) != len(tokens):
+        raise Exception(
+            f"Amount of messages must be equals to amount of tokens if you using is_random_msg = False or use is_random_msg = True"
+        )
+
     for idx, token in enumerate(tokens):
         try:
             proxy = choice(proxies) if is_random_proxy else proxies[idx]
             user_agent = choice(user_agents)
-            message = choice(messages)
+            message = choice(messages) if is_random_msg else messages[idx]
 
             account = Account(
                 token=token, proxy=proxy, user_agent=user_agent, chat_id=chat_id
